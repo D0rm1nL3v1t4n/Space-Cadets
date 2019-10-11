@@ -1,5 +1,12 @@
 package Challenge2;
 
+
+/*
+ * 2nd & FINAL VERSION OF CHALLENGE 2
+ * 
+ * Note: see BareBonesObject
+ */
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;

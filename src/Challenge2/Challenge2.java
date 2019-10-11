@@ -1,5 +1,10 @@
 package Challenge2;
 
+/*
+ *  FIRST VERSION OF CHALLENGE 2
+ *  --> See Challenge2v2 for final version
+ */
+
 import java.io.*;
 import java.util.*;
 
