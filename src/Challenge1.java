@@ -23,12 +23,11 @@ public class Challenge1 {
 	private static String getName(URL myURL) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(myURL.openStream()));
 		String line;
-		String name = "";
 		
 		while ((line = reader.readLine()) != null) {
 			if (line.indexOf("<title>") != -1) {
 				line = line.trim();
-				return line.substring(TITLE_TAG_LENGTH, line.indexOf('|')).trim().equals("People") ? "Not found" : line.substring(TITLE_TAG_LENGTH, line.indexOf('|')).trim();;
+				return line.substring(TITLE_TAG_LENGTH, line.indexOf('|')).trim().equals("People") ? "Not found" : line.substring(TITLE_TAG_LENGTH, line.indexOf('|')).trim();
 			}
 		}
 		return null;
