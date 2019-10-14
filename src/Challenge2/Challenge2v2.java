@@ -22,12 +22,12 @@ public class Challenge2v2 {
 	public static List<String> fileLines;
 	public static List<BareBonesObject> myVariables = new ArrayList<BareBonesObject>();
 	
-	public static int counter = 0;
 	public static int previousLine;
 	public static String previousData = "";
 	
 	public static void main(String[] args) throws IOException {
 		fileLines = Files.readAllLines(Paths.get(PATH + FILE_NAME));
+		int counter = 0;
 		readData(counter);
 	}
 	
@@ -71,8 +71,31 @@ public class Challenge2v2 {
 					myBareBonesVariable.decreaseOperation();
 					break;
 				case "while":
-					loopOperation(index);
+					
+					if (lineStack.size() > 0) {
+						if (lineStack.get(lineStack.size() - 1) != counter)
+							lineStack.add(counter);	// adds the line for the while loop to the stack
+					}
+					else {
+						lineStack.add(counter);		// adds the line for the while loop to the stack
+					}
+										
+					if (myVariables.get(index).isZero()) {
+						// condition is true ==> skip lines until end
+						lineStack.remove(lineStack.size() - 1);		// removes the line for the while loop to the stack
+						counter = previousLine;	
+					}
+					else {
+						if (lineStack.get(lineStack.size() - 1) == counter) {
+							readData(counter + 1);
+						}
+						if (lineStack.size() > 0)
+							counter = lineStack.get(lineStack.size() - 1);	// gets the last element (top) in the stack
+						else
+							return;
+					}
 					break;
+					
 				}
 				counter++;
 			}
@@ -107,30 +130,4 @@ public class Challenge2v2 {
 			previousData = data;
 		}
 	}
-	
-	public static void loopOperation(int index) throws IOException {
-		if (lineStack.size() > 0) {
-			if (lineStack.get(lineStack.size() - 1) != counter)
-				lineStack.add(counter);	// adds the line for the while loop to the stack
-		}
-		else {
-			lineStack.add(counter);		// adds the line for the while loop to the stack
-		}
-							
-		if (myVariables.get(index).isZero()) {
-			// condition is true ==> skip lines until end
-			lineStack.remove(lineStack.size() - 1);		// removes the line for the while loop to the stack
-			counter = previousLine;	
-		}
-		else {
-			if (lineStack.get(lineStack.size() - 1) == counter) {
-				readData(counter + 1);
-			}
-			if (lineStack.size() > 0)
-				counter = lineStack.get(lineStack.size() - 1);	// gets the last element (top) in the stack
-			else
-				return;
-		}
-	}
-	
 }
