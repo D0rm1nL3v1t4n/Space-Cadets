@@ -1,10 +1,10 @@
 "# Space-Cadets" 
 
-Challenge 1:
+__Challenge 1:__
 Using a webservice to get a person's name based on their email id from a webpage containing people's email ids and names through the HTML.
 
 
-Challenge 2:
+__Challenge 2:__
 Building a bare bones interpreter based on the operations:
 - `clear X;` - setting a variable X to a value of 0
 - `incr X;` - increasing the value of a variable by 1
@@ -17,5 +17,5 @@ Assumptions in my solution:
 - All variables used are first declared using the `clear` operation before being used elsewhere (e.g. in a while loop).
 
 
-Challenge 3
+__Challenge 3__
 Extending the bare bones interpreter created in Challenge 2 to have more operations.
