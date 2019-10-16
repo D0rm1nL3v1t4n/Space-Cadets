@@ -17,5 +17,5 @@ Assumptions in my solution:
 - All variables used are first declared using the `clear` operation before being used elsewhere (e.g. in a while loop).
 
 
-__Challenge 3__
+__Challenge 3:__
 Extending the bare bones interpreter created in Challenge 2 to have more operations.
