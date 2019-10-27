@@ -27,6 +27,7 @@ public class Challenge2v2 {
 	
 	public static void main(String[] args) throws IOException {
 		fileLines = Files.readAllLines(Paths.get(PATH + FILE_NAME));
+		fileLines.add(null);
 		int counter = 0;
 		readData(counter);
 	}
@@ -35,9 +36,6 @@ public class Challenge2v2 {
 		String line;
 		while ((line = fileLines.get(counter)) != null) {
 			line = line.trim().replace(";", "");
-
-			if (counter + 1 == fileLines.size())
-				fileLines.add(null);
 			
 			// checks if the end command has been reached at the end of a while loop
 			if (line.equals("end")) {

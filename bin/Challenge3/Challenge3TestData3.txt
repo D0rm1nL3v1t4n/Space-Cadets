@@ -1,0 +1,11 @@
+clear X;
+incr X;
+incr X;
+incr X;
+clear Y;
+if X is 3 do;
+	set Y to 10;
+else do;
+	set Y to 5;
+end if;
+incr X;

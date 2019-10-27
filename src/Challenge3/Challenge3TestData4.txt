@@ -1,0 +1,16 @@
+clear X;
+set X to 5;
+clear Y;
+set Y to 3;
+if X is 5 do;
+	set Y to Y * X;
+	clear Z;
+	if Y is 15;
+		set Z to 9;
+	else do;
+		set Z to 18;
+	end if;
+else do;
+	set Y to 5;
+end if;
+incr X;

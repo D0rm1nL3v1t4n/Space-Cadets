@@ -1,0 +1,9 @@
+clear X;
+incr X;
+incr X;
+incr X;
+clear Y;
+set Y to X;
+incr Y by 5;
+decr X by 2;
+set X to Y / 2;
